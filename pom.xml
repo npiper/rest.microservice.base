@@ -4,49 +4,49 @@
 	<parent>
 		<groupId>neilpiper.me</groupId>
 		<artifactId>parent.pom</artifactId>
-			<version>0.0.1_73.518ccdc</version>
-		</parent>
+		<version>0.0.1_73.518ccdc</version>
+	</parent>
 	<groupId>neilpiper.me</groupId>
 	<artifactId>rest.microservice.base</artifactId>
 	<version>0.1.0_${revision}</version>
 	<packaging>pom</packaging>
 	<name>rest.microservice.base</name>
 	<description>Microservice SpringBoot Base</description>
-	
-	
-<dependencyManagement>
-   <dependencies>
-      <dependency>
-        <!-- Import dependency management from Spring Boot -->
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-dependencies</artifactId>
-        <version>1.5.2.RELEASE</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-   </dependencies>
-</dependencyManagement>
-	
-	<dependencies>
-	
+
+
+	<dependencyManagement>
+		<dependencies>
 			<dependency>
+				<!-- Import dependency management from Spring Boot -->
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-dependencies</artifactId>
+				<version>1.5.2.RELEASE</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<dependencies>
+
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
 			<!-- <version>1.4.2.RELEASE</version> -->
 		</dependency>
-		
-		       <dependency>
-            <groupId>com.jayway.jsonpath</groupId>
-            <artifactId>json-path</artifactId>
-            <scope>test</scope>
-        </dependency>
-	
-			<dependency>
+
+		<dependency>
+			<groupId>com.jayway.jsonpath</groupId>
+			<artifactId>json-path</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 		</dependency>
-		
-				<dependency>
+
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
@@ -60,20 +60,20 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
-		
-		        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-hateoas</artifactId>
-        </dependency>
-		
-	
-			<dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-hateoas</artifactId>
+		</dependency>
+
+
+		<dependency>
 			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>
 			<version>2.3</version>
 		</dependency>
-	
-			<!-- Swagger -->
+
+		<!-- Swagger -->
 		<!-- https://mvnrepository.com/artifact/io.springfox/springfox-swagger2 -->
 		<dependency>
 			<groupId>io.springfox</groupId>
@@ -85,9 +85,16 @@
 			<artifactId>springfox-swagger-ui</artifactId>
 			<version>2.6.1</version>
 		</dependency>
-	
-	
-	   		<!-- TEST -->
+
+
+		<!-- TEST -->
+		<dependency>
+			<groupId>org.hsqldb</groupId>
+			<artifactId>hsqldb</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -114,14 +121,14 @@
 			<version>0.4.1</version>
 			<scope>test</scope>
 		</dependency>
-	
+
 	</dependencies>
 
 
 	<build>
 		<plugins>
 
-            <!-- SpringBoot maven plugin -->
+			<!-- SpringBoot maven plugin -->
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
