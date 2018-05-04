@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>neilpiper.me</groupId>
 		<artifactId>parent.pom</artifactId>
-		<version>0.0.1_73.518ccdc</version>
+		<version>0.0.1_79.cdb9454</version>
 	</parent>
 	<groupId>neilpiper.me</groupId>
 	<artifactId>rest.microservice.base</artifactId>
