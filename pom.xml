@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>neilpiper.me</groupId>
 		<artifactId>parent.pom</artifactId>
-		<version>0.0.1_79.cdb9454</version>
+		<version>0.0.1_82.c82f68d</version>
 	</parent>
 	<groupId>neilpiper.me</groupId>
 	<artifactId>rest.microservice.base</artifactId>
@@ -41,9 +41,11 @@
 			<scope>test</scope>
 		</dependency>
 
+        <!--  Need at least 1.16.14 to pass Corbetura checks -->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
+			<version>1.16.20</version>
 		</dependency>
 
 		<dependency>
