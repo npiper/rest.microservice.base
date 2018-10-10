@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>neilpiper.me</groupId>
 		<artifactId>parent.pom</artifactId>
-		<version>0.0.1_85.765b329</version>
+		<version>0.0.1_113.04057b6</version>
 	</parent>
 	<groupId>neilpiper.me</groupId>
 	<artifactId>rest.microservice.base</artifactId>
@@ -29,11 +29,31 @@
 
 	<dependencies>
 
+
+		<!-- MONITORING -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
 			<!-- <version>1.4.2.RELEASE</version> -->
 		</dependency>
+
+		<dependency>
+			<groupId>io.prometheus</groupId>
+			<artifactId>simpleclient_spring_boot</artifactId>
+			<version>0.0.26</version>
+		</dependency>
+		<dependency>
+			<groupId>io.prometheus</groupId>
+			<artifactId>simpleclient_hotspot</artifactId>
+			<version>0.0.26</version>
+		</dependency>
+		<dependency>
+			<groupId>io.prometheus</groupId>
+			<artifactId>simpleclient_servlet</artifactId>
+			<version>0.0.26</version>
+		</dependency>
+
+<!--  Build libraries -->
 
 		<dependency>
 			<groupId>com.jayway.jsonpath</groupId>
@@ -133,6 +153,8 @@
 			<version>3.8.0</version>
 			<scope>test</scope>
 		</dependency>
+
+
 
 	</dependencies>
 
