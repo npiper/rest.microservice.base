@@ -53,7 +53,7 @@
 			<version>0.0.26</version>
 		</dependency>
 
-<!--  Build libraries -->
+		<!-- Build libraries -->
 
 		<dependency>
 			<groupId>com.jayway.jsonpath</groupId>
@@ -174,6 +174,13 @@
 				<groupId>io.fabric8</groupId>
 				<artifactId>fabric8-maven-plugin</artifactId>
 				<version>3.5.37</version>
+				<configuration>
+					<images>
+						<image>
+							<name>npiper/${artifactId}</name>
+						</image>
+					</images>
+				</configuration>
 			</plugin>
 		</plugins>
 
