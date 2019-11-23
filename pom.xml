@@ -171,13 +171,14 @@
 
 			<!-- Fabric8 maven plugin - Kube, Docker -->
 			<plugin>
-				<groupId>io.fabric8</groupId>
-				<artifactId>fabric8-maven-plugin</artifactId>
-				<version>3.5.37</version>
+			
+        <groupId>io.fabric8</groupId>
+        <artifactId>fabric8-maven-plugin</artifactId> 
+        <version>3.5.41</version>
 				<configuration>
 					<images>
 						<image>
-							<name>npiper/${artifactId}</name>
+							<name>npiper/${project.artifactId}</name>
 						</image>
 					</images>
 				</configuration>
