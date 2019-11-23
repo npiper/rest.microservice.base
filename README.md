@@ -4,6 +4,19 @@
  * HATEOS
 
 
+## Libraries
+
+* spring-boot 1.5.2.RELEASE
+* spring-boot-starter-actuator
+* spring-boot-starter-web
+* spring-boot-starter-web-services
+* spring-boot-starter-data-jpa
+* spring-boot-starter-hateoas
+* io.prometheus 0.0.26
+* com.jayway.jsonpath:jsonpath
+* lombok 1.16.20
+* commons-io 2.3
+
 
 [Google - Schema.org parser](https://github.com/google/schemaorg-java)
 
