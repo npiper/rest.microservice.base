@@ -8,7 +8,7 @@
 		<version>(,2.0]</version>
 	</parent>
 	<artifactId>rest.microservice.base</artifactId>
-	<version>0.2.2</version>
+	<version>0.2.3</version>
 	<packaging>pom</packaging>
 	<name>rest.microservice.base</name>
 
@@ -169,32 +169,11 @@
 				<version>1.5.2.RELEASE</version>
 			</plugin>
 
-			<!-- Jib Plugin - simpler Docker -->
-			<plugin>
-				<groupId>com.google.cloud.tools</groupId>
-				<artifactId>jib-maven-plugin</artifactId>
-				<version>1.8.0</version>
-				<configuration>
-					<to>
-						<image>${githubOrg}/${project.artifactId}</image>
-					</to>
-				</configuration>
-			</plugin>
 
-			<!-- Fabric8 maven plugin - Kube, Docker
-			<plugin>
-				<groupId>io.fabric8</groupId>
-				<artifactId>fabric8-maven-plugin</artifactId>
-				<version>3.5.41</version>
-				<configuration>
-					<images>
-						<image>
-							<name>${githubOrg}/${project.artifactId}</name>
-						</image>
-					</images>
-				</configuration>
-			</plugin>
-			 -->
+			<!-- Fabric8 maven plugin - Kube, Docker <plugin> <groupId>io.fabric8</groupId> 
+				<artifactId>fabric8-maven-plugin</artifactId> <version>3.5.41</version> <configuration> 
+				<images> <image> <name>${githubOrg}/${project.artifactId}</name> </image> 
+				</images> </configuration> </plugin> -->
 		</plugins>
 
 	</build>
@@ -212,6 +191,84 @@
 		<url>https://github.com/npiper/rest.microservice.base</url>
 		<developerConnection>scm:git:https://github.com/npiper/rest.microservice.base.git</developerConnection>
 	</scm>
+
+	<!-- Profile for Deployment -->
+	<profiles>
+
+		<profile>
+
+			<id>local-build-location</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+				<!-- Travis CI has the environment variable 'TRAVIS=true' on all builds. -->
+			</activation>
+
+			<build>
+				<pluginManagement>
+					<plugins>
+
+						<plugin>
+							<groupId>com.google.cloud.tools</groupId>
+							<artifactId>jib-maven-plugin</artifactId>
+							<version>1.8.0</version>
+
+							<!-- In local build just make our tag 'latest', use $revision value 
+								for tag when on build server. -->
+							<configuration>
+								<to>
+									<image>${githubOrg}/${project.artifactId}</image>
+								</to>
+							</configuration>
+						</plugin>
+
+					</plugins>
+				</pluginManagement>
+			</build>
+		</profile>
+		<profile>
+			<id>travis-build-location</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+
+				<!-- Travis CI has the environment variable 'TRAVIS=true' on all builds. -->
+
+				<property>
+					<name>env.TRAVIS</name>
+					<value>true</value>
+				</property>
+			</activation>
+			<build>
+
+
+				<pluginManagement>
+					<plugins>
+
+
+						<!-- Jib Plugin - simpler Docker - on the build server make sure it's 
+							tagged to build version -->
+						<plugin>
+							<groupId>com.google.cloud.tools</groupId>
+							<artifactId>jib-maven-plugin</artifactId>
+							<version>1.8.0</version>
+							<configuration>
+								<to>
+									<image>${githubOrg}/${project.artifactId}:${revision}</image>
+								</to>
+							</configuration>
+						</plugin>
+
+
+					</plugins>
+
+
+
+
+				</pluginManagement>
+
+			</build>
+
+		</profile>
+	</profiles>
 
 
 </project>
