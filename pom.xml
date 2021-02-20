@@ -8,7 +8,7 @@
 		<version>(,2.0]</version>
 	</parent>
 	<artifactId>rest.microservice.base</artifactId>
-	<version>0.2.3</version>
+	<version>0.2.4</version>
 	<packaging>pom</packaging>
 	<name>rest.microservice.base</name>
 
