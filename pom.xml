@@ -8,11 +8,13 @@
 		<version>(,2.0]</version>
 	</parent>
 	<artifactId>rest.microservice.base</artifactId>
-	<version>1.0.0</version>
+	<version>1.1.0</version>
 	<packaging>pom</packaging>
 	<name>rest.microservice.base</name>
 
-
+<properties>
+ <springfox-version>3.0.0</springfox-version>
+</properties>
 
 
 	<dependencyManagement>
@@ -21,7 +23,7 @@
 				<!-- Import dependency management from Spring Boot -->
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-dependencies</artifactId>
-				<version>1.5.22.RELEASE</version>
+				<version>2.0.9.RELEASE</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
@@ -35,6 +37,7 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -72,18 +75,35 @@
 			<version>2.8.0</version>
 		</dependency>
 
-		<!-- OpenAPI Spec & Docs Support -->
+		<!--SpringFox dependencies -->
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-oas</artifactId>
+			<version>${springfox-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>${springfox-version}</version>
+		</dependency>
+
 
 		<dependency>
-			<groupId>org.springdoc</groupId>
-			<artifactId>springdoc-openapi-webmvc-core</artifactId>
-			<version>1.5.4</version>
+			<groupId>com.github.joschi.jackson</groupId>
+			<artifactId>jackson-datatype-threetenbp</artifactId>
+			<version>2.6.4</version>
+		</dependency>
+
+		<!-- Bean Validation API support -->
+		<dependency>
+			<groupId>javax.validation</groupId>
+			<artifactId>validation-api</artifactId>
 		</dependency>
 
 		<dependency>
-			<groupId>org.springdoc</groupId>
-			<artifactId>springdoc-openapi-ui</artifactId>
-			<version>1.5.4</version>
+			<groupId>org.springframework.plugin</groupId>
+			<artifactId>spring-plugin-core</artifactId>
+			<version>2.0.0.RELEASE</version>
 		</dependency>
 
 
@@ -92,7 +112,6 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
-			<!-- <version>1.4.2.RELEASE</version> -->
 		</dependency>
 
 		<dependency>
@@ -171,7 +190,6 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				<version>1.5.22.RELEASE</version>
 			</plugin>
 
 
@@ -184,14 +202,14 @@
 	</build>
 
 	<!-- REPOSITORIES & PLUGIN REPOSITORIES -->
-	
 
 
- 
 
-	
-	
-	
+
+
+
+
+
 	<repositories>
 		<!-- public release repo -->
 		<repository>
@@ -201,19 +219,19 @@
 	</repositories>
 
 	<scm>
-	    <connection>scm:git:git://github.com/npiper/rest.microservice.base</connection>
+		<connection>scm:git:git://github.com/npiper/rest.microservice.base</connection>
 		<url>https://github.com/npiper/rest.microservice.base</url>
 		<developerConnection>scm:git:https://github.com/npiper/rest.microservice.base.git</developerConnection>
-		
-	</scm>
-	  <distributionManagement>
 
-    <site>
-      <id>gh-pages</id>
-      <url>https://npiper.github.io/rest.microservice.base</url>
-    </site>
-   
-  </distributionManagement>
+	</scm>
+	<distributionManagement>
+
+		<site>
+			<id>gh-pages</id>
+			<url>https://npiper.github.io/rest.microservice.base</url>
+		</site>
+
+	</distributionManagement>
 
 	<!-- Profile for Deployment -->
 	<profiles>
