@@ -8,7 +8,7 @@
 		<version>(,2.0]</version>
 	</parent>
 	<artifactId>rest.microservice.base</artifactId>
-	<version>1.1.0</version>
+	<version>1.2.0</version>
 	<packaging>pom</packaging>
 	<name>rest.microservice.base</name>
 
@@ -23,7 +23,7 @@
 				<!-- Import dependency management from Spring Boot -->
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-dependencies</artifactId>
-				<version>2.0.9.RELEASE</version>
+				<version>2.3.9.RELEASE</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
@@ -72,7 +72,7 @@
 		<dependency>
 			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>
-			<version>2.8.0</version>
+			<version>[2.8,3.0)</version>
 		</dependency>
 
 		<!--SpringFox dependencies -->
@@ -91,7 +91,7 @@
 		<dependency>
 			<groupId>com.github.joschi.jackson</groupId>
 			<artifactId>jackson-datatype-threetenbp</artifactId>
-			<version>2.6.4</version>
+			<version>[2.12,3)</version>
 		</dependency>
 
 		<!-- Bean Validation API support -->
@@ -251,7 +251,7 @@
 						<plugin>
 							<groupId>com.google.cloud.tools</groupId>
 							<artifactId>jib-maven-plugin</artifactId>
-							<version>2.7.1</version>
+							<version>2.8.0</version>
 
 							<!-- In local build just make our tag 'latest', use $revision value 
 								for tag when on build server. -->
@@ -290,7 +290,7 @@
 						<plugin>
 							<groupId>com.google.cloud.tools</groupId>
 							<artifactId>jib-maven-plugin</artifactId>
-							<version>2.7.1</version>
+							<version>2.8.0</version>
 							<configuration>
 								<to>
 									<image>${githubOrg}/${project.artifactId}:${revision}</image>

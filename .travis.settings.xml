@@ -34,6 +34,11 @@
 </repositories>
 
     <pluginRepositories>
+    
+    <pluginRepository>
+       <id>maven-repo</id>
+        <url>https://repo1.maven.org/maven2</url>
+    </pluginRepository>
         <pluginRepository>
             <id>mulesoft-release</id>
             <url>http://repository.mulesoft.org/releases/</url>
