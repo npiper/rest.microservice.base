@@ -1,21 +1,29 @@
 # POM for REST Microservices
 
- * JPA Persistence
- * HATEOS
+
+Parent POM for basing REST / SpringBoot microservices in a docker container.
+
+This creates an infrastructure for semantic versioning of API Implementations, packaged and deployed
+with `jib` plugin and with the travis-ci build framwork creates Docker hub images based on those
+image baselines.
+
+Libraries:
+
+ * REST
+ * WebServices 
+ * Karate REST Test framework & Cucumber publishing
+ * JPA Persistence 
+ * HATEOAS
 
 
 ## Libraries
 
-* spring-boot 1.5.2.RELEASE
-* spring-boot-starter-actuator
-* spring-boot-starter-web
-* spring-boot-starter-web-services
-* spring-boot-starter-data-jpa
-* spring-boot-starter-hateoas
-* io.prometheus 0.0.26
-* com.jayway.jsonpath:jsonpath
-* lombok 1.16.20
-* commons-io 2.3
+Visible on Package documentation on Github pages:
+
+https://npiper.github.io/rest.microservice.base/dependencies.html
+
+* spring-boot 2.3.9.RELEASE
+
 
 
 [Google - Schema.org parser](https://github.com/google/schemaorg-java)
